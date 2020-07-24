@@ -1,5 +1,11 @@
+<!-- TODO:
+    + Update Styling
+    + Look into some form of dynamic wallpaper
+    + -->
+
+
 <template>
-  <div id="app" :class="typeof weather.main">
+  <div id="app" :class="typeof weather.main != 'undefined' && weather.main.temp > 16 ? 'warm' : ''">
     <main>
 <!-- Default search box, on keypress fetchWeather() method is called -->
       <div class="search-box">
@@ -36,6 +42,7 @@ export default {
     return{
       //OpenWeather API Key
       api_key: '4a36aa61c8a3561cbab410e2cf241d2e',
+      base_url: 'http://api.openweathermap.org/data/2.5/',
       query: '',
       weather: {}
     }
@@ -44,7 +51,7 @@ export default {
     fetchWeather (e) {
       //API Query performed on enter key press
       if (e.key == "Enter") {
-        fetch(`${this.url_base}weather?q=${this.query}&units=metric&APPID=${this.api_key}`)
+        fetch(`${this.base_url}weather?q=${this.query}&units=metric&APPID=${this.api_key}`)
           .then(res => {
             return res.json();
           }).then(this.setResults);
