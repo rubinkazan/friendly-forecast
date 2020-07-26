@@ -1,11 +1,3 @@
-<!-- TODO:
-    + Update Styling
-    + Look into some form of dynamic wallpaper
-    + Geolocation
-    + More info about weather
-    + -->
-
-
 <template>
   <div id="app" :class="typeof weather.main != 'undefined' && weather.main.temp > 16 ? 'warm' : 'cold'">
     <main>
@@ -20,6 +12,7 @@
         />
       </div>
 
+          <!-- Builds weather and date -->
       <div class="weather-wrap" v-if="typeof weather.main != 'undefined'">
         <div class="location-box">
           <div class="location">{{ weather.name }}, {{ weather.sys.country }}</div>
@@ -96,18 +89,24 @@ body {
 */
 
 #app {
-  background-image: url('./assets/default-bg.jpg');
+  background-color: green;
+  opacity: 0.6;
   background-size: cover;
   background-position: bottom;
   transition: 0.4s;
 }
 
 #app.warm {
-  background-image: url('./assets/warm-bg.jpg');
+  background-color: orange;
+  opacity: 0.6;
+  /* background-image: url('./assets/warm-bg.jpg'); */
+
 }
 
 #app.cold {
-  background-image: url('./assets/cold-bg.jpg');
+  /* background-image: url('./assets/cold-bg.jpg'); */
+  background-color: plum;
+  opacity: 0.6
 }
 
 main {
