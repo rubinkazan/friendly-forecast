@@ -1,6 +1,7 @@
 <template>
   <div id="app" :class="typeof weather.main != 'undefined' && weather.main.temp > 16 ? 'warm' : 'cold'">
     <main>
+      <h2 class="cs" style="text-align: center;">Friendly Forecast - Vue Weather App</h2>
 <!-- Default search box, on keypress fetchWeather() method is called -->
       <div class="search-box">
         <input 
@@ -82,6 +83,11 @@ export default {
 
 body {
   font-family: 'montserrat', sans-serif;
+}
+
+.cs {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  color:blanchedalmond;
 }
 
 /* Three different backround states
@@ -189,4 +195,11 @@ main {
   font-style: italic;
   text-shadow: 3px 6px rgba(0, 0, 0, 0.25);
 }
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 </style>
