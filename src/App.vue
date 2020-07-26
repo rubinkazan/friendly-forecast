@@ -1,7 +1,9 @@
 <template>
   <div id="app" :class="typeof weather.main != 'undefined' && weather.main.temp > 16 ? 'warm' : 'cold'">
     <main>
-      <h2 class="cs" style="text-align: center;">Friendly Forecast - Vue Weather App</h2>
+      <div>
+      <p style="text-align: center;" class="cs">Friendly Forecast - Weather App</p>
+      </div>
 <!-- Default search box, on keypress fetchWeather() method is called -->
       <div class="search-box">
         <input 
@@ -33,7 +35,7 @@
 <script>
 
 export default {
-  name: 'App',
+  name: 'Friendly Forecast',
   data(){
     return{
       //OpenWeather API Key
@@ -86,8 +88,13 @@ body {
 }
 
 .cs {
-  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-family: 'montserrat', sans-serif;
   color:blanchedalmond;
+  color: #FFF;
+  font-size: 32px;
+  font-weight: 500;
+  text-align: center;
+  text-shadow: 1px 3px rgba(0, 0, 0, 0.25);
 }
 
 /* Three different backround states
