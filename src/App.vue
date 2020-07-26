@@ -1,11 +1,13 @@
 <!-- TODO:
     + Update Styling
     + Look into some form of dynamic wallpaper
+    + Geolocation
+    + More info about weather
     + -->
 
 
 <template>
-  <div id="app" :class="typeof weather.main != 'undefined' && weather.main.temp > 16 ? 'warm' : ''">
+  <div id="app" :class="typeof weather.main != 'undefined' && weather.main.temp > 16 ? 'warm' : 'cold'">
     <main>
 <!-- Default search box, on keypress fetchWeather() method is called -->
       <div class="search-box">
@@ -42,7 +44,7 @@ export default {
     return{
       //OpenWeather API Key
       api_key: '4a36aa61c8a3561cbab410e2cf241d2e',
-      base_url: 'http://api.openweathermap.org/data/2.5/',
+      base_url: 'https://api.openweathermap.org/data/2.5/',
       query: '',
       weather: {}
     }
